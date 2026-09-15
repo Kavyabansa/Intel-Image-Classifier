@@ -1,36 +1,67 @@
-# Intel Image Classifier — Free Deployment
+# 🏞️ Intel Image Classifier
 
-This is a Streamlit version of the Gradio app from the supplied Colab notebook.
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://intel-image-classifier-jknz4vzwzemcz2set63smb.streamlit.app/)
 
-## Required model file
+A deep learning image classification application built using **PyTorch, Torchvision, EfficientNet-B0, and Streamlit**.
 
-Copy your trained model:
+The application classifies uploaded images into six different scene categories:
 
-`intel_efficientnet_v2.pth`
+**Buildings • Forest • Glacier • Mountain • Sea • Street**
 
-into this same folder, next to `app.py`.
+---
 
-The notebook saved the model at:
+## 🚀 Live Demo
 
-`/content/drive/MyDrive/ml-journey/intel_efficientnet_v2.pth`
+👉 **[Try the Intel Image Classifier](https://intel-image-classifier-jknz4vzwzemcz2set63smb.streamlit.app/)**
 
-## Local test
+Upload an image and the trained deep learning model will predict the most likely scene along with prediction probabilities.
 
-```bash
-pip install -r requirements.txt
-streamlit run app.py
-```
+---
 
-## Free deployment
+## ✨ Features
 
-Use Streamlit Community Cloud:
+- 🖼️ Upload an image directly through the web interface
+- 🤖 Deep learning based image classification
+- 🧠 EfficientNet-B0 architecture
+- 📊 Prediction probabilities for all six classes
+- ⚡ Fast image inference
+- 🌐 Deployed using Streamlit Community Cloud
+- 🐍 Built using Python and PyTorch
 
-1. Create a GitHub repository.
-2. Upload `app.py`, `requirements.txt`, and `intel_efficientnet_v2.pth`.
-3. Go to https://share.streamlit.io/
-4. Sign in with GitHub.
-5. Create app.
-6. Select your repository and `app.py`.
-7. Deploy.
+---
 
-Your app will receive a public `streamlit.app` URL.
+## 🎯 Supported Classes
+
+| Class | Description |
+|---|---|
+| 🏢 Buildings | Buildings and urban structures |
+| 🌲 Forest | Forest and wooded landscapes |
+| 🧊 Glacier | Glacier and snowy landscapes |
+| ⛰️ Mountain | Mountain environments |
+| 🌊 Sea | Sea, ocean and coastal scenes |
+| 🛣️ Street | Roads and street environments |
+
+---
+
+## 🧠 Model
+
+This project uses **EfficientNet-B0** with pretrained ImageNet weights.
+
+The original classification layer was replaced with a custom classification layer containing **6 output classes**.
+
+### Model Architecture
+
+```text
+Input Image
+     ↓
+Image Preprocessing
+     ↓
+EfficientNet-B0
+     ↓
+Feature Extraction
+     ↓
+Custom Linear Classifier
+     ↓
+6-Class Prediction
+     ↓
+Softmax Probabilities
